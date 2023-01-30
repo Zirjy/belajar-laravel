@@ -27,4 +27,3 @@ Route::patch('/tasks/{id}', [TaskController::class, 'update']);
 Route::delete('/tasks/{id}', [TaskController::class, 'delete']);
 
 Route::get('/', [HomeController::class, 'index']);
-

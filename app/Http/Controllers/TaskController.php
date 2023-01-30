@@ -33,12 +33,12 @@ class TaskController extends Controller
     }
 
     public function update(Request $request,$id){
-        $task =Task::find($id);
+        $task = Task::find($id);
         $task->update([
             'task' => $request->task,
             'user' => $request->user
         ]);
-        return 'sukses';
+        return $task;
     }
 
     public function delete($id){
