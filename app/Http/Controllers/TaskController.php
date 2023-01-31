@@ -41,8 +41,16 @@ class TaskController extends Controller
         return $task;
     }
 
+    public function edit($id){
+        return view('task.edit');
+    }
+
     public function delete($id){
         $task = Task::find($id)->delete();
         return 'sukses';
+    }
+
+    public function create(){
+        return view('task.create');
     }
 }

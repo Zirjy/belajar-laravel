@@ -18,9 +18,13 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/tasks', [TaskController::class, 'index']);
 
+Route::get('/tasks/create', [TaskController::class, 'create']);
+
 Route::get('/tasks/{id}', [TaskController::class, 'show']);
 
 Route::post('/tasks', [TaskController::class, 'store']);
+
+route::get('tasks/{id}/edit', [TaskController::class, 'edit']);
 
 Route::patch('/tasks/{id}', [TaskController::class, 'update']);
 
