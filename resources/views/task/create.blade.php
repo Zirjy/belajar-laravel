@@ -3,7 +3,7 @@
 <div class="mt-5 mx-auto" style="width: 380px">
     <div class="card">
         <div class="card-body">
-            <form action="#">
+            <form action="{{ url('/tasks') }}" method="POST">
                 <div class="mb-3">
                     <label for="" class="form-label">User</label>
                     <input type="text" class="form-control">
