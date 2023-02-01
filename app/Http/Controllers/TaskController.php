@@ -25,6 +25,11 @@ class TaskController extends Controller
     }
 
     public function store(Request $request) {
+
+        $request->validate([
+            'tasks' => ['required'],
+            'user' => ['required']
+    ]);
         // $this->taskList[$request->key] = $request->task;
         // return $this->taskList;
         Task::create([
