@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Task;
@@ -24,12 +25,9 @@ class TaskController extends Controller
         return $task;
     }
 
-    public function store(Request $request) {
+    public function store(TaskRequest $request) {
 
-        $request->validate([
-            'tasks' => ['required'],
-            'user' => ['required']
-    ]);
+        
         // $this->taskList[$request->key] = $request->task;
         // return $this->taskList;
         Task::create([
@@ -39,7 +37,7 @@ class TaskController extends Controller
         return redirect('/tasks');
     }
 
-    public function update(Request $request,$id){
+    public function update(TaskRequest $request,$id){
         $task = Task::find($id);
         $task->update([
             'task' => $request->task,
