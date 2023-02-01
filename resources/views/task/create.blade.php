@@ -4,6 +4,7 @@
     <div class="card">
         <div class="card-body">
             <form action="{{ url('/tasks') }}" method="POST">
+                 @csrf
                 <div class="mb-3">
                     <label for="" class="form-label">User</label>
                     <input type="text" class="form-control" name="user">
