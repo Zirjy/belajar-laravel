@@ -17,10 +17,20 @@
                 <div class="mb-3">
                     <label for="" class="form-label">User</label>
                     <input type="text" class="form-control" name="user">
+                        @error('task')
+                        <span class="text-danger">
+                            {{$message}}
+                        </span>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Task</label>
                     <textarea class="form-control" id="" rows="3" name="task"></textarea>
+                    @error('task')
+                    <span class="text-danger">
+                        {{$message}}
+                    </span>
+                @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
