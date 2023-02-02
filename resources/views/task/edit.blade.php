@@ -17,8 +17,8 @@
                 @method('PATCH')
                 <div class="mb-3">
                     <label for="" class="form-label">User</label>
-                    <input type="text" class="form-control" name="user" value="{{$task->user}}">
-                    @error('task')
+                    <input type="text" class="form-control" name="user" value="{{old('user') , $task->task}}">
+                    @error('user')
                     <span class="text-danger">
                         {{$message}}
                     </span>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label">Task</label>
-                    <textarea class="form-control" id="" rows="3" name="task">{{$task->task}}</textarea>
+                    <textarea class="form-control" id="" rows="3" name="task">{{old('task')}}</textarea>
                     @error('task')
                     <span class="text-danger">
                         {{$message}}
