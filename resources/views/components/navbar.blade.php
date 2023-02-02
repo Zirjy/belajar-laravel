@@ -9,9 +9,11 @@
                     <a href="{{route('login')}}" class="btn btn-outline-light me-2">Login</a>
                     <a href="{{route('register')}}" class="btn btn-warning">Sign-up</a>
                     @else
-                    <a href="{{route('logout')}}" class="btn btn-outline-light m-2" onclick="event.preventDefault();  document.getElementById('logout-form'). submit();" >
+                    <a href="{{route('logout')}}" class="btn btn-outline-light m-2" onclick="event.preventDefault();  
+                    document.getElementById('logout-form'). submit();" >
                         {{Auth::user()->name}}</a>
                     <form action="{{route('logout')}}" id="logout-form" method="POST">
+                        @csrf
                     </form>
                     @endguest
                 </div>
