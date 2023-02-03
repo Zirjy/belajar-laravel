@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
@@ -16,9 +17,11 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->role || $request->role !== 'admin'){
-            return redirect('/');
-        }
+        $user = Auth::user();
+        if (!$user->role || $user->role !== 'admin'){
+            return redirect('/tasks');
+        }else
         return $next($request);
+
     }
 }
