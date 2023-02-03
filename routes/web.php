@@ -17,7 +17,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/tasks', [TaskController::class, 'index']);
+Route::get('/tasks', [TaskController::class, 'index'])->middleware('auth');
 
 Route::get('/tasks/create', [TaskController::class, 'create']);
 
